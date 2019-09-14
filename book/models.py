@@ -27,7 +27,7 @@ class Autor(models.Model):
 class Libro(models.Model):
     titulo = models.CharField(max_length=100)
     autores = models.ManyToManyField(Autor)
-    editor = models.ForeignKey(Editorial)
+    editor = models.ForeignKey(Editorial, related_name="editor")
     fecha_publicacion = models.DateField()
 
     def __unicode__(self):
